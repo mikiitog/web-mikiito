@@ -1,0 +1,357 @@
+/* Estilos compartidos para single.html, index.html y futuras páginas */
+
+/* --- ESTILOS GENERALES Y CONFIGURACIÓN --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: #24292f;
+    background-color: #f9f9f9;
+    line-height: 1.625;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark-mode {
+    color: #e8eaed;
+    background-color: #121212;
+}
+
+html.dark-mode body {
+    background-color: #121212;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding: 20px;
+    padding-bottom: 90px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 1px solid #e1e4e8;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Roboto Condensed';
+}
+
+html.dark-mode header {
+    border-bottom-color: #30363d;
+}
+
+header h1 {
+    font-size: 2.25rem;
+    color: #1f2328;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+html.dark-mode header h1 {
+    color: #e8eaed;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #57606a;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+html.dark-mode header p {
+    color: #8b949e;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.bottom-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    max-width: 420px;
+    height: 64px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgb(31 35 40 / 90%);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+    backdrop-filter: blur(12px);
+    z-index: 999;
+}
+
+.bottom-bar button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #ffffff;
+    font: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    min-width: 72px;
+    height: 100%;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bottom-bar button:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+}
+
+.bottom-bar__icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    stroke: #ffffff;
+    fill: none;
+}
+
+.bottom-bar__label {
+    font-family: 'Roboto Condensed';
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.page-footer {
+    border-top: 1px solid #e1e4e8;
+    margin-top: 40px;
+    padding: 28px 0 24px;
+}
+
+html.dark-mode .page-footer {
+    border-top-color: #30363d;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 14px;
+    color: #24292f;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark-mode .social-action {
+    color: #e8eaed;
+}
+
+.social-action:hover {
+    transform: translateY(-3px);
+}
+
+.social-action__icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.social-action__label {
+    font-family: 'Roboto Condensed';
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #57606a;
+    margin: 0;
+}
+
+html.dark-mode .social-action__label {
+    color: #8b949e;
+}
+
+.container.aside-hidden .sidebar-index {
+    display: none;
+}
+
+.container.aside-hidden .article-content {
+    flex: 1 1 100%;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.article-content {
+    flex: 3;
+    padding: 40px;
+}
+
+.article-content img {
+    width: 100%;
+    display: block;
+    margin: 30px 0;
+    border-radius: 7px;
+    object-fit: cover;
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 35px;
+    margin-bottom: 16px;
+    color: #1f2328;
+    letter-spacing: -0.02em;
+    border-left: 4px solid #24292f;
+    padding-left: 15px;
+    scroll-margin-top: 60px;
+}
+
+html.dark-mode .article-content h2 {
+    color: #e8eaed;
+    border-left-color: #8b949e;
+}
+
+.article-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    font-size: 1.065rem;
+    font-weight: 300;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #24292f;
+    text-align: left;
+}
+
+html.dark-mode .article-content p {
+    color: #e8eaed;
+}
+
+.sidebar-index {
+    flex: 1;
+    position: sticky;
+    top: 40px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.sidebar-index h3 {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1f2328;
+    letter-spacing: -0.02em;
+    font-size: 1.35rem;
+}
+
+html.dark-mode .sidebar-index h3 {
+    color: #e8eaed;
+}
+
+.sidebar-index ul {
+    list-style: none;
+}
+
+.sidebar-index li {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-index li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #eaeaea;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+html.dark-mode .sidebar-index li::before {
+    background-color: #30363d;
+}
+
+html.dark-mode .sidebar-index li.active::before {
+    background-color: #e8eaed;
+}
+
+.sidebar-index li.active::before {
+    background-color: #24292f;
+}
+
+.sidebar-index li.active a {
+    color: #1f2328;
+    font-weight: 600;
+}
+
+html.dark-mode .sidebar-index li.active a {
+    color: #e8eaed;
+}
+
+.sidebar-index li:hover::before {
+    background-color: #24292f;
+}
+
+.sidebar-index a {
+    font-size: 0.9rem;
+    color: #57606a;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.2s ease;
+    padding-left: 1.2rem;
+}
+
+html.dark-mode .sidebar-index a {
+    color: #8b949e;
+}
+
+html.dark-mode .sidebar-index a:hover {
+    color: #e8eaed;
+}
+
+.sidebar-index a:hover {
+    color: #1f2328;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar-index {
+        position: static;
+        width: 100%;
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
